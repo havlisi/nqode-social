@@ -1,14 +1,21 @@
 // Colors
 $color-black: #000;
 $color-white: #fff;
-$color-blue: #007bd3;
+
+$color-primary: #8267ccce;
+$color-secondary: #6b258e;
+$color-warning: #ab3f8b;
+$background-color: #3c51af80;
+$drop-shadow: #00000033;
 
 // Fonts
 $font-family: 'Roboto', sans-serif;
 
-$fs-small: 0.75rem; // 12px
-$fs-base: 16px;
-$fs-medium: 1.25rem; // 20px
+$font-size-xs: 0.75rem; // 12px
+$font-size-s: 0.875rem; // 14px
+$font-size: 16px;
+$font-size-m: 1.125rem; // 18px
+$font-size-l: 1.25rem; // 20px
 
 // Font weight
 $fw-base: 400;
@@ -19,8 +26,22 @@ $fw-bold: 800;
 $fw-extra-bold: 900;
 
 // Spacings
-$space-xs: 0.25rem; // 4px
-$space-s: 0.5rem; // 8px
+$space-xxs: 0.25rem; // 4px
+$space-xs: 0.5rem; // 8px
+$space-s: 10px;
 $space: 1rem; // 16px
 $space-m: 1.25rem; // 20px
 $space-l: 1.5rem; // 24px
+$space-xl: 2rem; // 32 px
+$space-xxl: 2.5rem; // 40 px
+
+// Width and height
+$width-s: 5%;
+$width-m: 30%;
+$width-l: 100%;
+
+$height-max: 100vh;
+
+// Utilities
+$blur-l: 100px;
+$border-s: 1px;
