@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'src/components/core/Button/Button';
 import Input from 'src/components/core/Input/Input';
-import Card from 'src/components/layout/Card/Card';
+import Card from 'src/components/Card/Card';
 import classes from 'src/pages/Login/Login.module.scss';
 import { login } from 'src/services/AuthService';
 import ValidationMessage from 'src/components/core/ValidationMessage/ValidationMessage';
@@ -55,7 +55,7 @@ const Login = () => {
         <ValidationMessage message={error} />
         <div className={`${classes['c-login-form__span']}`}>
           <span>Don't have an account?</span>&nbsp;&nbsp;
-          <Link className={`${classes['c-login-form__link']}`} to='/'>
+          <Link className={`${classes['c-login-form__link']}`} to='/register'>
             Sign up
           </Link>
         </div>

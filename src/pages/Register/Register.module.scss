@@ -1,0 +1,22 @@
+@import 'src/styles/settings.scss';
+
+.c-register-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: $height-max;
+
+  &__span {
+    display: flex;
+    justify-content: center;
+
+    margin-top: $space;
+
+    font-size: $font-size-s;
+  }
+
+  &__link {
+    color: $color-secondary;
+  }
+}

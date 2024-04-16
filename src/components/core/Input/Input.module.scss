@@ -1,6 +1,6 @@
 @import 'src/styles/settings.scss';
 
-.c-input {
+.c-input-container {
   padding: $space-s 0;
   margin: $space-s 0;
 
@@ -9,7 +9,7 @@
 
     padding: $space-s $space-s;
     margin-top: $space-s;
-    border: $space-xs solid $color-white;
+    border: $border-m solid $color-white;
     border-radius: $space-s;
 
     &:focus {
@@ -22,6 +22,10 @@
 
     &:focus::placeholder {
       color: transparent;
+    }
+
+    &--error {
+      border: $border-m solid $color-warning;
     }
   }
 }
