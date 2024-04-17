@@ -1,0 +1,33 @@
+@import 'src/styles/settings.scss';
+
+.c-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: $width-l;
+
+  margin-top: $space;
+  padding: $space-s $space-l;
+
+  background-color: $background-color;
+  backdrop-filter: blur($blur-l);
+
+  &__image {
+    width: $width-s;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+
+    width: $width-m;
+
+    font-size: $font-size;
+  }
+
+  &__link {
+    color: $color-white;
+    text-transform: uppercase;
+  }
+}

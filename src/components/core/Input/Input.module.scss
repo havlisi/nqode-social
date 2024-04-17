@@ -1,0 +1,27 @@
+@import 'src/styles/settings.scss';
+
+.c-input {
+  padding: $space-s 0;
+  margin: $space-s 0;
+
+  &__field {
+    width: $width-l;
+
+    padding: $space-s $space-s;
+    margin-top: $space-s;
+    border: $space-xs solid $color-white;
+    border-radius: $space-s;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      font-size: $font-size-xs;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
+}

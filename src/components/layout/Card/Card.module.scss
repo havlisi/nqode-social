@@ -1,0 +1,24 @@
+@import 'src/styles/settings.scss';
+
+.c-card {
+  display: flex;
+  flex-direction: column;
+
+  padding: $space-xl;
+  border-radius: $space;
+
+  background-color: $background-color;
+  color: $color-white;
+
+  &__title {
+    text-align: center;
+    font-size: $space-xl;
+    font-weight: $fw-base;
+  }
+
+  &__container {
+    margin-top: $space-xxs;
+
+    font-size: $space;
+  }
+}

@@ -1,0 +1,13 @@
+@import 'src/styles/settings.scss';
+
+.c-validation-message {
+  display: flex;
+  justify-content: center;
+
+  margin-top: $space-s;
+
+  color: $color-warning;
+
+  text-align: center;
+  font-size: $font-size-s;
+}
