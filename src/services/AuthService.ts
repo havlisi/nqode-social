@@ -6,5 +6,5 @@ export const login = async (authenticationRequest: AuthenticationRequest) => {
   return await axios.post('auth/login', authenticationRequest);
 };
 export const register = async (createUser: CreateUser) => {
-  return await axios.post('/auth/register', createUser);
+  return await axios.post('auth/register', createUser);
 };
