@@ -1,13 +1,15 @@
-import classes from './App.module.scss';
-import Navbar from './components/layout/Navbar/Navbar';
+import { Route, Routes } from 'react-router-dom';
 import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+import Layout from './components/layout/Layout/Layout';
 
 const App = () => {
   return (
-    <div className={classes['c-app']}>
-      <Navbar />
-      <Login />
-    </div>
+    <Routes>
+      <Route path='/login' element={<Login />} />
+      <Route path='/register' element={<Register />} />
+      <Route path='/' element={<Layout />}></Route>
+    </Routes>
   );
 };
 
