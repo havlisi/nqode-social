@@ -1,21 +1,23 @@
 import * as yup from 'yup';
 
 export const registrationValidationSchema = yup.object().shape({
-  name: yup
+  firstName: yup
     .string()
-    .min(2, 'Name must have at least 2 characters.')
-    .max(30, "Name can't have more than 30 characters.")
-    .required('Please provide a name.'),
+    .min(2, 'First name must be longer.')
+    .max(30, 'First name is too long.')
+    .required('Please provide a first name.'),
+  lastName: yup
+    .string()
+    .min(2, 'Last name must be longer.')
+    .max(30, 'Last name is too long.')
+    .required('Please provide a last name.'),
   username: yup
     .string()
-    .min(2, 'Username must have at least 2 characters.')
-    .max(30, "Username can't have more than 30 characters.")
+    .min(2, 'Username must be longer.')
+    .max(30, 'Username is too long.')
     .required('Please provide a username.'),
   email: yup.string().email('Please enter a valid email.').required('Please enter an email.'),
-  password: yup
-    .string()
-    .min(4, 'Password must be at least 4 characters long.')
-    .required('Please provide a password'),
+  password: yup.string().min(4, 'Password must be longer.').required('Please provide a password'),
   confirmedPassword: yup
     .string()
     .oneOf([yup.ref('password'), ''], 'Passwords must match')
@@ -25,4 +27,23 @@ export const registrationValidationSchema = yup.object().shape({
 export const loginValidationSchema = yup.object().shape({
   username: yup.string().required('Please provide a username.'),
   password: yup.string().required('Please provide a password')
+});
+
+export const updateUserValidationSchema = yup.object().shape({
+  firstName: yup
+    .string()
+    .min(2, 'First name  must be longer.')
+    .max(30, 'First name too long.')
+    .required('Please provide a first name.'),
+  lastName: yup
+    .string()
+    .min(2, 'Last name must be longer.')
+    .max(30, 'Last name too long.')
+    .required('Please provide a last name.'),
+  username: yup
+    .string()
+    .min(2, 'Username must be longer.')
+    .max(30, 'Username is too long..')
+    .required('Please provide a username.'),
+  email: yup.string().email('Please enter a valid email.').required('Please enter an email.')
 });

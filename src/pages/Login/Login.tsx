@@ -7,30 +7,26 @@ import classes from 'src/pages/Login/Login.module.scss';
 import { login } from 'src/services/AuthService';
 import ValidationMessage from 'src/components/core/ValidationMessage/ValidationMessage';
 import { AuthenticationRequest } from 'src/models/AuthenticationRequest';
-import { FormikHelpers, FormikProps, useFormik } from 'formik';
+import { FormikProps, useFormik } from 'formik';
 import { loginValidationSchema } from 'src/shared/schemas/validation';
+import { getAndStoreLogedinUser } from 'src/services/UserService';
 
 const Login = () => {
   const navigate = useNavigate();
 
   const [errorMessage, setErrorMessage] = useState('');
 
-  const onSubmit = (
-    values: AuthenticationRequest,
-    actions: FormikHelpers<AuthenticationRequest>
-  ) => {
+  const onSubmit = (values: AuthenticationRequest) => {
     login(values)
       .then((response) => {
-        if (response) {
-          localStorage.setItem('tokens', JSON.stringify(response.data));
-          navigate('/home');
-          setErrorMessage('');
-        }
+        localStorage.setItem('tokens', JSON.stringify(response.data));
+        getAndStoreLogedinUser().then(() => {
+          navigate('/');
+        });
       })
       .catch((error) => {
         setErrorMessage(error.response.data.message);
       });
-    actions.setSubmitting(true);
   };
 
   const { values, errors, handleChange, handleSubmit }: FormikProps<AuthenticationRequest> =

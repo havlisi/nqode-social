@@ -1,0 +1,53 @@
+@import 'src/styles/settings.scss';
+
+.c-profile {
+  display: flex;
+  justify-content: space-around;
+
+  margin: $margin-xs $margin-xs;
+
+  &__side-card {
+    height: $width-px-base;
+
+    border-radius: $space-m;
+
+    color: $color-white;
+    background-color: $background-color;
+  }
+
+  &__profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-top: $margin-s;
+
+    font-weight: $fw-medium;
+  }
+
+  &__user-icon {
+    width: $width-l;
+
+    margin: $margin-xxs;
+
+    color: $color-white;
+  }
+
+  &__name {
+    font-size: $font-size-l;
+    font-weight: $fw-medium;
+  }
+
+  &__username {
+    margin-top: $margin-xxs;
+
+    font-size: $font-size-s;
+  }
+
+  &__button {
+    margin: $margin-s auto 0 auto;
+    width: $width-xl;
+  }
+}

@@ -3,9 +3,9 @@
 .c-navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 
-  width: $width-l;
+  width: $width-max;
 
   margin-top: $space;
   padding: $space-s $space-l;
@@ -14,20 +14,34 @@
   backdrop-filter: blur($blur-l);
 
   &__image {
-    width: $width-s;
+    width: $width-xxs;
   }
 
   &__actions {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 
     width: $width-m;
 
     font-size: $font-size;
   }
 
-  &__link {
+  &__icon {
+    width: $width-s;
+
     color: $color-white;
-    text-transform: uppercase;
+
+    &--logout {
+      height: $height-xl;
+
+      cursor: pointer;
+
+      transform: scaleX(-1);
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
   }
 }

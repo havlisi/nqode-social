@@ -1,7 +1,7 @@
 import Button from 'src/components/core/Button/Button';
 import classes from 'src/pages/Register/Register.module.scss';
 import { register } from 'src/services/AuthService';
-import { FormikHelpers, useFormik } from 'formik';
+import { useFormik } from 'formik';
 import { CreateUser } from 'src/models/CreateUser';
 import { registrationValidationSchema } from 'src/shared/schemas/validation';
 import Card from 'src/components/Card/Card';
@@ -15,24 +15,23 @@ const Register = () => {
 
   const [errorMessage, setErrorMessage] = useState('');
 
-  const onSubmit = (values: CreateUser, actions: FormikHelpers<CreateUser>) => {
+  const onSubmit = (values: CreateUser) => {
     register(values)
       .then((response) => {
         if (response) {
           localStorage.setItem('tokens', JSON.stringify(response.data));
-          setErrorMessage('');
-          navigate('/home');
+          navigate('/');
         }
       })
       .catch((error) => {
         setErrorMessage(error.response.data.message);
       });
-    actions.setSubmitting(true);
   };
 
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
-      name: '',
+      firstName: '',
+      lastName: '',
       username: '',
       email: '',
       password: '',
@@ -47,12 +46,21 @@ const Register = () => {
       <Card title='Create an account'>
         <Input
           type='text'
-          label='Name'
-          placeholder='Please provide a name'
-          value={values.name}
-          name='name'
+          label='First name'
+          placeholder='Please provide a first name'
+          value={values.firstName}
+          name='firstName'
           onChange={handleChange}
-          error={errors.name}
+          error={errors.firstName}
+        />
+        <Input
+          type='text'
+          label='Last name'
+          placeholder='Please provide a last name'
+          value={values.lastName}
+          name='lastName'
+          onChange={handleChange}
+          error={errors.lastName}
         />
         <Input
           type='text'

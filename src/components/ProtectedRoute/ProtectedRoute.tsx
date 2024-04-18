@@ -6,9 +6,8 @@ const ProtectedRoute = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const tokens = JSON.parse(localStorage.getItem('tokens') ?? '{}');
-
-    if (!tokens.accessToken && !tokens.refreshToken) navigate('/login');
+    const tokens = localStorage.getItem('tokens');
+    if (!tokens) navigate('/login');
   }, [navigate]);
 
   return (
