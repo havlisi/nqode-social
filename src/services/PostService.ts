@@ -3,11 +3,11 @@ import { CreatePost } from 'src/models/CreatePost';
 import { Post } from 'src/models/Post';
 
 export const getAllPosts = async () => {
-  return await axios.post('posts');
+  return await axios.get('posts');
 };
 
 export const getPostById = async (id: number) => {
-  return await axios.post(`posts/${id}`, id);
+  return await axios.get(`posts/${id}`);
 };
 
 export const createPost = async (createPost: CreatePost) => {
@@ -15,5 +15,5 @@ export const createPost = async (createPost: CreatePost) => {
 };
 
 export const updatePost = async (id: number, post: Post) => {
-  return await axios.post(`posts/${id}`, post);
+  return await axios.put(`posts/${id}`, post);
 };

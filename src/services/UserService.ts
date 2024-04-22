@@ -6,6 +6,10 @@ export const getUserByUsername = (username: string) => {
   return axios.get(`users/${username}`);
 };
 
+export const getUserById = (id: number) => {
+  return axios.get(`users/id/${id}`);
+};
+
 export const updateUser = (id: number, updatedUser: User) => {
   return axios.put(`users/${id}`, updatedUser);
 };
@@ -17,5 +21,5 @@ export const getAndStoreLogedinUser = async () => {
 };
 
 export const getUserPosts = (id: number) => {
-  return axios.put(`users/${id}/posts`);
+  return axios.get(`users/${id}/posts`);
 };

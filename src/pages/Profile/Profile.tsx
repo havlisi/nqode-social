@@ -1,14 +1,16 @@
 import { UserCircleIcon } from '@heroicons/react/16/solid';
 import { useCallback, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import SinglePost from 'src/components/SinglePost/SinglePost';
 import Button from 'src/components/core/Button/Button';
+import { Post } from 'src/models/Post';
 import { User } from 'src/models/User';
 import classes from 'src/pages/Profile/Profile.module.scss';
 import { getUserByUsername, getUserPosts } from 'src/services/UserService';
 
 const Profile = () => {
   const loggedInUser = JSON.parse(localStorage.getItem('user')!);
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Post[]>([]);
   const [user, setUser] = useState<User>();
   const { username } = useParams();
 
@@ -54,12 +56,16 @@ const Profile = () => {
         </div>
       </div>
       <div className={`${classes['c-profile__posts-container']}`}>
-        {!posts ? (
-          posts
-        ) : (
+        {!posts.length ? (
           <div className={`${classes['c-profile__posts']}`}>
             <span>No posts uploaded</span>
             <img width='250' src='../src/assets/images/not_found.svg' alt='No posts' />
+          </div>
+        ) : (
+          <div className={`${classes['c-profile__posts']}`}>
+            {posts.map((singlePost) => (
+              <SinglePost post={singlePost} key={singlePost.id} />
+            ))}
           </div>
         )}
       </div>
