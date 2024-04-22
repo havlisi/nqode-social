@@ -2,6 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import Profile from './pages/Profile/Profile';
+import EditProfile from './pages/EditProfile/EditProfile';
 
 const App = () => {
   return (
@@ -9,7 +11,9 @@ const App = () => {
       <Route path='/login' element={<Login />} />
       <Route path='/register' element={<Register />} />
       <Route path='/' element={<ProtectedRoute />}>
-        <Route path='/home' />
+        <Route index />
+        <Route path='/profile/:username' element={<Profile />} />
+        <Route path='/profile/:username/edit' element={<EditProfile />} />
       </Route>
     </Routes>
   );

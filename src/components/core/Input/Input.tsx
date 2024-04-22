@@ -19,19 +19,19 @@ const Input: React.FC<InputProps> = ({
   onChange
 }) => {
   return (
-    <div className={`${classes['c-input-container']}`}>
+    <div className={`${classes['c-input']}`}>
       <label>{label}</label>
       <div>
         <input
-          className={`${classes['c-input-container__field']} ${error ? classes['c-input-container__field--error'] : ''}`}
+          className={`${classes['c-input__field']} ${error ? classes['c-input__field--error'] : ''}`}
           type={type}
           name={name}
           placeholder={placeholder}
           value={value}
           onChange={onChange}
         />
+        {error ? <ValidationMessage message={error} /> : <></>}
       </div>
-      {error && <ValidationMessage message={error} />}
     </div>
   );
 };

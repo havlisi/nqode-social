@@ -16,6 +16,7 @@ $font-size-s: 0.875rem; // 14px
 $font-size: 16px;
 $font-size-m: 1.125rem; // 18px
 $font-size-l: 1.25rem; // 20px
+$font-size-xl: 1.5rem; // 24px
 
 // Font weight
 $fw-base: 400;
@@ -36,13 +37,37 @@ $space-xl: 2rem; // 32 px
 $space-xxl: 2.5rem; // 40 px
 
 // Width and height
-$width-s: 5%;
+$width-xxs: 5%;
+$width-xs: 10%;
+$width-s: 25%;
 $width-m: 30%;
-$width-l: 100%;
+$width: 35%;
+$width-l: 40%;
+$width-xl: 60%;
+$width-xxl: 80%;
+$width-max: 100%;
 
+$width-px-m: 300px;
+$width-px-base: 450px;
+$width-px-l: 600px;
+
+$height-s: 25%;
+$height-s: 30%;
+$height-s: 35%;
+$height-l: 40%;
+$height-xl: 80%;
 $height-max: 100vh;
 
 // Utilities
 $blur-l: 100px;
 $border-s: 1px;
 $border-m: 1.5px;
+$border: 2px;
+$border-l: 4px;
+$border-xxl: 20px;
+
+// Margin and padding
+$margin-xxs: 2%;
+$margin-xs: 5%;
+$margin-s: 10%;
+$margin: 15%;

@@ -5,19 +5,21 @@
   flex-direction: column;
 
   padding: $space-xl;
-  border-radius: $space;
+  border-radius: $border-xxl;
 
   background-color: $background-color;
   color: $color-white;
 
+  box-shadow: $border-s $border $border-xxl $drop-shadow;
+
   &__title {
     text-align: center;
-    font-size: $space-xl;
+    font-size: $font-size-xl;
     font-weight: $fw-base;
   }
 
-  &__container {
-    margin-top: $space-xxs;
+  &__children {
+    margin-top: $margin-xs;
 
     font-size: $space;
   }

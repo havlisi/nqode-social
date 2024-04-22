@@ -1,11 +1,11 @@
 @import 'src/styles/settings.scss';
 
-.c-input-container {
+.c-input {
   padding: $space-s 0;
   margin: $space-s 0;
 
   &__field {
-    width: $width-l;
+    width: $width-max;
 
     padding: $space-s $space-s;
     margin-top: $space-s;
