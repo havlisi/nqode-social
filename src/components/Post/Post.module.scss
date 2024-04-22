@@ -1,0 +1,24 @@
+@import 'src/styles/settings.scss';
+
+.c-post {
+  width: 35%;
+  height: 300px;
+
+  margin: 5% auto;
+  border-radius: 30px;
+
+  border: $border-s solid $background-color;
+
+  &__user-info {
+    height: 20%;
+
+    border-radius: 30px 30px 0 0;
+  }
+
+  &__post-info {
+    height: 80%;
+
+    border-top: 1px solid $background-color;
+    border-radius: 0 0 30px 30px;
+  }
+}

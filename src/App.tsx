@@ -4,6 +4,7 @@ import Register from './pages/Register/Register';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import Profile from './pages/Profile/Profile';
 import EditProfile from './pages/EditProfile/EditProfile';
+import Post from './components/Post/Post';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route index />
         <Route path='/profile/:username' element={<Profile />} />
         <Route path='/profile/:username/edit' element={<EditProfile />} />
+        <Route path='/posts' element={<Post />} />
       </Route>
     </Routes>
   );
